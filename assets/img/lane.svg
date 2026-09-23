@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 44" width="216" height="44">
+  <defs>
+    <linearGradient id="g-navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4275C6"/>
+      <stop offset=".46" stop-color="#0E2A5E"/>
+      <stop offset="1" stop-color="#04102A"/>
+    </linearGradient>
+    <linearGradient id="g-red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2536A"/>
+      <stop offset=".46" stop-color="#D81E33"/>
+      <stop offset="1" stop-color="#7E0F1E"/>
+    </linearGradient>
+    <linearGradient id="g-white" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".46" stop-color="#E4ECF5"/>
+      <stop offset="1" stop-color="#A8B8CB"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="20.2" width="216" height="3.6" fill="#0E2A5E" fill-opacity=".5"/>
+  <g>
+    <ellipse cx="13.5" cy="22" rx="12.6" ry="17" fill="url(#g-red)"/>
+    <ellipse cx="13.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="13.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="19.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="8.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="40.5" cy="22" rx="12.6" ry="17" fill="url(#g-red)"/>
+    <ellipse cx="40.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="40.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="46.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="35.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="67.5" cy="22" rx="12.6" ry="17" fill="url(#g-red)"/>
+    <ellipse cx="67.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="67.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="73.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="62.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="94.5" cy="22" rx="12.6" ry="17" fill="url(#g-white)"/>
+    <ellipse cx="94.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="94.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="100.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="89.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="121.5" cy="22" rx="12.6" ry="17" fill="url(#g-white)"/>
+    <ellipse cx="121.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="121.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="127.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="116.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="148.5" cy="22" rx="12.6" ry="17" fill="url(#g-navy)"/>
+    <ellipse cx="148.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="148.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="154.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="143.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="175.5" cy="22" rx="12.6" ry="17" fill="url(#g-navy)"/>
+    <ellipse cx="175.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="175.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="181.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="170.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+  <g>
+    <ellipse cx="202.5" cy="22" rx="12.6" ry="17" fill="url(#g-navy)"/>
+    <ellipse cx="202.5" cy="22" rx="12.6" ry="17" fill="none" stroke="#04102A" stroke-opacity=".30" stroke-width="1.3"/>
+    <ellipse cx="202.5" cy="22" rx="5.2" ry="13" fill="#fff" fill-opacity=".20"/>
+    <ellipse cx="208.9" cy="22" rx="1.5" ry="13.5" fill="#04102A" fill-opacity=".16"/>
+    <ellipse cx="197.3" cy="14" rx="2.8" ry="5" fill="#fff" fill-opacity=".50"/>
+  </g>
+</svg>

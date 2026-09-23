@@ -1,0 +1,11 @@
+# Системные файлы Windows и macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Локальные настройки Claude Code (launch.json остаётся в репозитории)
+.claude/settings.local.json
+
+# Логи и временные файлы
+*.log
+*.tmp

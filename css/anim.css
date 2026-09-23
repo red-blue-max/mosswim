@@ -1,0 +1,153 @@
+/* ============================================================
+   MOSSWIM — движение
+   Всё, что двигается на сайте, живёт здесь: вода в шапке,
+   пузырьки, блики, аккордеоны, индикатор прокрутки.
+   ============================================================ */
+
+/* ---------- Вода в главном экране ---------- */
+
+/* Медленный дрейф световых пятен — «блики на воде» */
+.hero__media::before{
+  background-size:180% 180%, 160% 160%, 100% 100%;
+  animation:waterDrift 28s ease-in-out infinite alternate;
+}
+@keyframes waterDrift{
+  0%   { background-position: 10% 0%,  90% 100%, 0 0; }
+  100% { background-position: 30% 12%, 66% 82%,  0 0; }
+}
+
+/* Горизонтальные линии — рябь, уходящая вниз */
+.hero__media::after{ animation:waterLines 7s linear infinite; }
+@keyframes waterLines{ to{ background-position-y:9px; } }
+
+/* Пузырьки поднимаются со дна экрана */
+.hero::after{
+  content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    radial-gradient(circle 4px at 12% 100%, rgba(255,255,255,.30), transparent 60%),
+    radial-gradient(circle 3px at 28% 100%, rgba(255,255,255,.22), transparent 60%),
+    radial-gradient(circle 6px at 47% 100%, rgba(255,255,255,.16), transparent 60%),
+    radial-gradient(circle 3px at 63% 100%, rgba(255,255,255,.26), transparent 60%),
+    radial-gradient(circle 5px at 81% 100%, rgba(255,255,255,.18), transparent 60%),
+    radial-gradient(circle 3px at 93% 100%, rgba(255,255,255,.24), transparent 60%);
+  background-repeat:no-repeat;
+  animation:bubbles 16s linear infinite;
+}
+@keyframes bubbles{
+  0%   { transform:translateY(0)     scaleX(1);    opacity:0; }
+  12%  { opacity:1; }
+  88%  { opacity:1; }
+  100% { transform:translateY(-105%) scaleX(1.15); opacity:0; }
+}
+.hero__in, .hero__scroll{ position:relative; z-index:1; }
+
+/* Шапка внутренних страниц — та же рябь, но спокойнее */
+.pagehead::after{ animation:waterLines 11s linear infinite; }
+
+/* ---------- Блик на кнопке ---------- */
+
+.btn::after{
+  content:''; position:absolute; z-index:-1; top:0; bottom:0; left:-140%; width:55%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+  transform:skewX(-22deg);
+  transition:left .65s var(--ease);
+}
+.btn:hover::after{ left:150%; }
+.btn--ghost::after{ background:linear-gradient(100deg, transparent, rgba(255,255,255,.18), transparent); }
+
+/* ---------- Оживление карточек ---------- */
+
+.person__ph img, .pool__ph img, .prog__media img{
+  transition:transform .7s var(--ease);
+}
+.person:hover .person__ph img,
+.pool:hover .pool__ph img,
+.prog:hover .prog__media img{ transform:scale(1.06); }
+
+/* Заглушка фото тоже реагирует на наведение */
+.person__ph::after, .pool__ph::after, .prog__media::after{ transition:opacity .4s var(--ease); }
+.person:hover .person__ph::after{ opacity:.75; }
+
+/* Занятие в расписании — красная полоса выезжает слева */
+.slot{ position:relative; }
+.slot::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--red);
+  transform:scaleY(0); transform-origin:center; transition:transform .3s var(--ease);
+}
+.slot:hover::before{ transform:scaleY(1); }
+
+/* Метка «идёт набор» с живой точкой */
+.tag--live{ display:inline-flex; align-items:center; gap:8px; }
+.tag--live::before{
+  content:''; width:7px; height:7px; border-radius:50%; background:var(--red);
+  animation:livePulse 1.8s var(--ease) infinite;
+}
+@keyframes livePulse{
+  0%,100%{ opacity:1;  box-shadow:0 0 0 0 rgba(216,30,51,.55); }
+  70%    { opacity:.7; box-shadow:0 0 0 7px rgba(216,30,51,0); }
+}
+
+/* Крупные числа в карточках сборов слегка «всплывают» */
+.camp:hover .camp__day{ transform:translateY(-2px); }
+.camp__day{ transition:transform .35s var(--ease); }
+
+/* ---------- Индикатор прокрутки (создаётся скриптом) ---------- */
+
+.progress{
+  position:fixed; top:0; left:0; right:0; height:3px; z-index:95; pointer-events:none;
+}
+.progress span{
+  display:block; height:100%; width:0; background:var(--red);
+  box-shadow:0 0 12px rgba(216,30,51,.6);
+  transition:width .1s linear;
+}
+
+/* ---------- Аккордеон: длинные объяснения по клику ---------- */
+
+.acc{ border-top:1px solid var(--line); }
+:is(.on-dark,.section--navy,.section--deep) .acc{ border-top-color:rgba(255,255,255,.18); }
+
+.acc__item{ border-bottom:1px solid var(--line); }
+:is(.on-dark,.section--navy,.section--deep) .acc__item{ border-bottom-color:rgba(255,255,255,.18); }
+
+.acc__btn{
+  width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:20px 0; background:none; border:0; cursor:pointer; text-align:left;
+  font-family:var(--font-display); font-weight:600;
+  font-size:clamp(16px,1.5vw,20px); letter-spacing:.01em; text-transform:uppercase;
+  color:var(--ink); transition:color .25s var(--ease);
+}
+:is(.on-dark,.section--navy,.section--deep) .acc__btn{ color:#fff; }
+.acc__btn:hover{ color:var(--red); }
+:is(.on-dark,.section--navy,.section--deep) .acc__btn:hover{ color:var(--ice); }
+
+.acc__sign{
+  position:relative; flex:0 0 auto; width:22px; height:22px;
+  transition:transform .35s var(--ease);
+}
+.acc__sign::before, .acc__sign::after{
+  content:''; position:absolute; left:50%; top:50%; background:currentColor;
+  transform:translate(-50%,-50%);
+}
+.acc__sign::before{ width:16px; height:2px; }
+.acc__sign::after{ width:2px; height:16px; transition:transform .35s var(--ease); }
+.acc__btn[aria-expanded="true"] .acc__sign{ transform:rotate(180deg); }
+.acc__btn[aria-expanded="true"] .acc__sign::after{ transform:translate(-50%,-50%) scaleY(0); }
+
+.acc__panel{ height:0; overflow:hidden; transition:height .4s var(--ease); }
+.acc__inner{
+  padding:0 0 24px; max-width:68ch;
+  color:var(--ink-soft); font-size:16px;
+}
+:is(.on-dark,.section--navy,.section--deep) .acc__inner{ color:rgba(255,255,255,.72); }
+.acc__inner p{ margin-bottom:.8em; }
+.acc__inner ul{ margin:0; padding-left:20px; display:grid; gap:8px; }
+
+/* ---------- Уважение к настройке «меньше движения» ---------- */
+
+@media (prefers-reduced-motion:reduce){
+  .hero__media::before, .hero__media::after, .hero::after,
+  .pagehead::after, .lane, .section::before, .tag--live::before{
+    animation:none !important;
+  }
+}

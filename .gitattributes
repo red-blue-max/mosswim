@@ -1,0 +1,11 @@
+# Единые переводы строк в репозитории
+* text=auto eol=lf
+
+# Бинарные файлы не трогать
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.mp4  binary
+*.webm binary

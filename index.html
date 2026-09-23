@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOSSWIM — школа плавания в Москве и Мытищах | обучение детей и взрослых</title>
+<meta name="description" content="Школа плавания MOSSWIM: обучение плаванию детей и взрослых с нуля, спортивная подготовка, техника, спецпрограммы. 4 бассейна в Москве и Мытищах, тренеры МС и КМС, выездные сборы.">
+<link rel="canonical" href="https://mosswim.ru/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MOSSWIM — школа плавания в Москве и Мытищах">
+<meta property="og:description" content="Обучение плаванию детей и взрослых, спортивная подготовка и выездные сборы. 4 бассейна, тренеры МС и КМС.">
+<meta property="og:image" content="https://mosswim.ru/assets/img/og-cover.jpg">
+<meta property="og:url" content="https://mosswim.ru/">
+<meta name="theme-color" content="#0E2A5E">
+<link rel="icon" href="assets/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <span>Школа плавания · дети и взрослые · 4 бассейна в Москве и Мытищах</span>
+    <div class="topbar__soc">
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+      <a href="https://t.me/mosswim" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://vk.com/mosswim" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="brand" href="index.html" aria-label="MOSSWIM — на главную">
+      <img src="assets/img/logo.png" alt="MOSSWIM — школа плавания" width="336" height="195">
+    </a>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <ul class="nav__list">
+        <li><a href="about.html">О школе</a></li>
+        <li><a href="programs.html">Программы</a></li>
+        <li><a href="camps.html">Сборы</a></li>
+        <li><a href="coaches.html">Тренеры</a></li>
+        <li><a href="pools.html">Бассейны</a></li>
+        <li><a href="schedule.html">Расписание</a></li>
+        <li><a href="prices.html">Цены</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="nav__foot">
+        <a class="tel" href="tel:+70000000000">+7 (000) 000-00-00</a>
+        <div class="soc">
+          <a href="https://t.me/mosswim" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/mosswim" target="_blank" rel="noopener">VK</a>
+        </div>
+        <button class="btn" data-book="Заявка на пробное занятие">Записаться</button>
+      </div>
+    </nav>
+    <button class="btn btn--sm header__cta" data-book="Заявка на пробное занятие">Записаться</button>
+  </div>
+</header>
+<div class="scrim"></div>
+
+<main>
+
+  <!-- ГЕРОЙ -->
+  <section class="hero">
+    <div class="hero__media">
+      <!-- Положите ролик в assets/video/hero.mp4 и постер в assets/img/hero.jpg.
+           Пока файлов нет — работает градиентный фон. -->
+      <video autoplay muted loop playsinline poster="assets/img/hero.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- Фото пловца в правой части экрана. Края растворяются маской в css/style.css -->
+    <div class="hero__photo" aria-hidden="true">
+      <picture>
+        <source media="(max-width:860px)" type="image/webp" srcset="assets/img/hero-swimmer-sm.webp">
+        <source media="(max-width:860px)" srcset="assets/img/hero-swimmer-sm.jpg">
+        <source type="image/webp" srcset="assets/img/hero-swimmer.webp">
+        <img src="assets/img/hero-swimmer.jpg" alt="" width="1600" height="1067"
+             fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="hero__veil"></div>
+    <div class="wrap hero__in">
+      <p class="eyebrow reveal">Школа плавания с 2014 года</p>
+      <h1 class="hero__title reveal" data-d="1">Плавать. Расти. <em>Побеждать.</em></h1>
+      <p class="hero__sub reveal" data-d="2">
+        Учим с нуля детей и взрослых, ставим технику, готовим к стартам.
+        Четыре бассейна, тренеры МС и КМС, сборы круглый год.
+      </p>
+      <div class="hero__actions reveal" data-d="3">
+        <button class="btn" data-book="Заявка на пробное занятие">Записаться на пробное</button>
+        <a class="btn btn--ghost" href="camps.html">Ближайшие сборы</a>
+      </div>
+      <div class="hero__facts reveal" data-d="4">
+        <div><b>12</b><span>лет школе</span></div>
+        <div><b>4</b><span>бассейна</span></div>
+        <div><b>6</b><span>тренеров</span></div>
+        <div><b>18+</b><span>и с 4 лет</span></div>
+      </div>
+    </div>
+    <div class="hero__scroll">Листайте</div>
+  </section>
+
+  
+
+  <!-- УТП -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="usp">
+        <article class="usp__item reveal">
+          <div class="usp__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4">
+              <circle cx="24" cy="18" r="11"/><path d="M17 27 13 45l11-6 11 6-4-18"/>
+            </svg>
+          </div>
+          <h3>Тренеры со званиями</h3>
+          <p>Мастера спорта и КМС. Стаж от 5 до 15 лет.</p>
+        </article>
+        <article class="usp__item reveal" data-d="1">
+          <div class="usp__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4">
+              <circle cx="17" cy="16" r="7"/><circle cx="34" cy="19" r="5.5"/>
+              <path d="M5 40c0-7 5.5-12 12-12s12 5 12 12M31 30c6 0 12 4 12 10"/>
+            </svg>
+          </div>
+          <h3>Группы до 6 человек</h3>
+          <p>Тренер видит каждого. Есть индивидуальные и сплит-занятия.</p>
+        </article>
+        <article class="usp__item reveal" data-d="2">
+          <div class="usp__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M24 44s14-13.5 14-24A14 14 0 1 0 10 20c0 10.5 14 24 14 24Z"/>
+              <circle cx="24" cy="19" r="5.5"/>
+            </svg>
+          </div>
+          <h3>Четыре бассейна</h3>
+          <p>Москва и Мытищинский округ — выбираете, что удобнее по дороге.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- СБОРЫ -->
+  <section class="section section--mist">
+    <div class="wrap">
+      <div class="head head--split reveal">
+        <div>
+          <p class="eyebrow">Календарь</p>
+          <h2>Ближайшие сборы</h2>
+        </div>
+        <p class="lead">Неделя-две полного погружения: две тренировки в день, ОФП, восстановление.</p>
+      </div>
+
+      <!-- TODO: заменить на реальные даты, места и цены сборов -->
+      <article class="camp reveal">
+        <div class="camp__date">
+          <b class="camp__day">24</b>
+          <span class="camp__mon">Октября</span>
+          <span class="camp__year">— 31.10.2026</span>
+        </div>
+        <div class="camp__body">
+          <h3>Осенние сборы · Сочи</h3>
+          <div class="camp__meta">
+            <span><b>8 дней</b> · 50-метровый бассейн</span>
+            <span>Группа: <b>дети 9–16 лет</b></span>
+            <span>Мест: <b>6 из 20</b></span>
+          </div>
+          <p class="mt-s"><span class="tag tag--live">Идёт набор</span> <span class="tag tag--ice">2 тренировки в день</span></p>
+        </div>
+        <div class="camp__cta">
+          <span class="camp__price">от 00 000 ₽</span>
+          <button class="btn btn--sm" data-book="Сбор: Сочи, 24–31 октября 2026">Записаться</button>
+        </div>
+      </article>
+
+      <article class="camp reveal" data-d="1">
+        <div class="camp__date">
+          <b class="camp__day">03</b>
+          <span class="camp__mon">Января</span>
+          <span class="camp__year">— 13.01.2027</span>
+        </div>
+        <div class="camp__body">
+          <h3>Зимние сборы · Аланья, Турция</h3>
+          <div class="camp__meta">
+            <span><b>11 дней</b> · открытый подогреваемый бассейн</span>
+            <span>Группа: <b>дети и взрослые</b></span>
+            <span>Мест: <b>14 из 24</b></span>
+          </div>
+          <p class="mt-s"><span class="tag tag--live">Идёт набор</span> <span class="tag tag--ice">Можно с родителями</span></p>
+        </div>
+        <div class="camp__cta">
+          <span class="camp__price">от 00 000 ₽</span>
+          <button class="btn btn--sm" data-book="Сбор: Аланья, 3–13 января 2027">Записаться</button>
+        </div>
+      </article>
+
+      <article class="camp reveal" data-d="2">
+        <div class="camp__date">
+          <b class="camp__day">22</b>
+          <span class="camp__mon">Марта</span>
+          <span class="camp__year">— 29.03.2027</span>
+        </div>
+        <div class="camp__body">
+          <h3>Весенние сборы · Кисловодск</h3>
+          <div class="camp__meta">
+            <span><b>8 дней</b> · среднегорье</span>
+            <span>Группа: <b>спортивные группы</b></span>
+            <span>Мест: <b>открыт предзапись</b></span>
+          </div>
+          <p class="mt-s"><span class="tag tag--free">Предварительная запись</span></p>
+        </div>
+        <div class="camp__cta">
+          <span class="camp__price">уточняется</span>
+          <button class="btn btn--sm btn--ghost" data-book="Сбор: Кисловодск, март 2027 (предзапись)">В лист ожидания</button>
+        </div>
+      </article>
+
+      <p class="mt-m"><a class="link-arrow" href="camps.html">Все сборы и условия участия <span>→</span></a></p>
+    </div>
+  </section>
+
+  <!-- СЧЁТЧИКИ -->
+  <section class="section section--navy on-dark">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Школа в цифрах</p>
+        <h2>За двенадцать лет работы</h2>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><b><span data-count="12">0</span></b><span>лет на воде</span></div>
+        <div class="stat reveal" data-d="1"><b><span data-count="3200">0</span><i>+</i></b><span>учеников прошли обучение</span></div>
+        <div class="stat reveal" data-d="2"><b><span data-count="6">0</span></b><span>тренеров в штате</span></div>
+        <div class="stat reveal" data-d="3"><b><span data-count="4">0</span></b><span>бассейна на выбор</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОМУ ПОДХОДИТ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head head--split reveal">
+        <div>
+          <p class="eyebrow">Направления</p>
+          <h2>Кому подходит</h2>
+        </div>
+        <p class="lead">Программы собраны под задачу, а не под возраст.</p>
+      </div>
+      <div class="grid grid--3">
+        <a class="card reveal" href="programs.html#deti">
+          <span class="card__num">01</span>
+          <h3>Детям с 4 лет</h3>
+          <p>Адаптация к воде, четыре стиля, первые старты.</p>
+          <p class="mt-s"><span class="link-arrow">Подробнее <span>→</span></span></p>
+        </a>
+        <a class="card reveal" data-d="1" href="programs.html#vzroslye">
+          <span class="card__num">02</span>
+          <h3>Взрослым с нуля</h3>
+          <p>Работаем со страхом воды и дыханием. Результат — к 3–4 занятию.</p>
+          <p class="mt-s"><span class="link-arrow">Подробнее <span>→</span></span></p>
+        </a>
+        <a class="card reveal" data-d="2" href="programs.html#sport">
+          <span class="card__num">03</span>
+          <h3>Спорт и техника</h3>
+          <p>Разрядные нормативы, старты и повороты, блок для триатлетов.</p>
+          <p class="mt-s"><span class="link-arrow">Подробнее <span>→</span></span></p>
+        </a>
+        <a class="card reveal" href="programs.html#beremennye">
+          <span class="card__num">04</span>
+          <h3>Беременным и после родов</h3>
+          <p>Мягкая нагрузка под контролем тренера.</p>
+          <p class="mt-s"><span class="link-arrow">Подробнее <span>→</span></span></p>
+        </a>
+        <a class="card reveal" data-d="1" href="programs.html#ovz">
+          <span class="card__num">05</span>
+          <h3>Детям с ОВЗ</h3>
+          <p>Индивидуально, по рекомендациям врача.</p>
+          <p class="mt-s"><span class="link-arrow">Подробнее <span>→</span></span></p>
+        </a>
+        <a class="card reveal" data-d="2" href="camps.html">
+          <span class="card__num">06</span>
+          <h3>Выездные сборы</h3>
+          <p>Сборы в России и за рубежом, круглый год.</p>
+          <p class="mt-s"><span class="link-arrow">Календарь <span>→</span></span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОЧЕМУ ПЛАВАНИЕ -->
+  <section class="section section--mist">
+    <div class="wrap">
+      <div class="grid grid--2" style="align-items:start; gap:clamp(28px,4vw,64px)">
+        <div class="reveal">
+          <p class="eyebrow">Полезно знать</p>
+          <h2>Зачем вообще плавать</h2>
+          <p class="lead mt-s">Единственная нагрузка, где работает всё тело без ударов
+             по суставам.</p>
+          <a class="link-arrow mt-m" href="about.html">Как устроено обучение <span>→</span></a>
+        </div>
+        <div class="acc reveal" data-d="1">
+          <div class="acc__item">
+            <button class="acc__btn" aria-expanded="false">С какого возраста учить ребёнка<span class="acc__sign"></span></button>
+            <div class="acc__panel"><div class="acc__inner">
+              <p>Осознанное обучение технике начинается с 4–5 лет, когда ребёнок понимает
+                 и удерживает инструкцию. До этого — адаптация к воде вместе с родителем.</p>
+            </div></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__btn" aria-expanded="false">Сколько занятий нужно взрослому<span class="acc__sign"></span></button>
+            <div class="acc__panel"><div class="acc__inner">
+              <p>Держаться на воде и проплыть бассейн — обычно 6–10 занятий. Уверенный кроль
+                 с дыханием в сторону — курс на 2–3 месяца при двух тренировках в неделю.</p>
+            </div></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__btn" aria-expanded="false">Что даёт плавание здоровью<span class="acc__sign"></span></button>
+            <div class="acc__panel"><div class="acc__inner">
+              <ul>
+                <li>формирует осанку и снимает зажимы в спине у школьников;</li>
+                <li>увеличивает дыхательный объём за 2–3 месяца;</li>
+                <li>даёт кардионагрузку без риска для коленей;</li>
+                <li>учит навыку, который однажды может спасти жизнь.</li>
+              </ul>
+            </div></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__btn" aria-expanded="false">Как выбрать бассейн<span class="acc__sign"></span></button>
+            <div class="acc__panel"><div class="acc__inner">
+              <p>Смотрите на глубину «лягушатника», температуру воды (для детей от +30 °C)
+                 и сколько человек тренер берёт на дорожку одновременно.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ТРЕНЕРЫ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head head--split reveal">
+        <div>
+          <p class="eyebrow">Команда</p>
+          <h2>Тренеры школы</h2>
+        </div>
+        <p class="lead">На пробном вы сразу попадаете к тому, кто ведёт вашу программу.</p>
+      </div>
+      <div class="grid grid--4">
+        <article class="person reveal">
+          <div class="person__ph" data-ph="Фото тренера"><img src="assets/img/coach-1.jpg" alt=""></div>
+          <div class="person__body">
+            <p class="person__rank">Мастер спорта</p>
+            <h3 class="person__name">Имя Фамилия</h3>
+            <p class="person__spec">Спортивные группы, подготовка к соревнованиям · стаж 15 лет</p>
+          </div>
+        </article>
+        <article class="person reveal" data-d="1">
+          <div class="person__ph" data-ph="Фото тренера"><img src="assets/img/coach-2.jpg" alt=""></div>
+          <div class="person__body">
+            <p class="person__rank">КМС</p>
+            <h3 class="person__name">Имя Фамилия</h3>
+            <p class="person__spec">Дети 4–10 лет, обучение с нуля · стаж 9 лет</p>
+          </div>
+        </article>
+        <article class="person reveal" data-d="2">
+          <div class="person__ph" data-ph="Фото тренера"><img src="assets/img/coach-3.jpg" alt=""></div>
+          <div class="person__body">
+            <p class="person__rank">МСМК, участник Олимпийских игр</p>
+            <h3 class="person__name">Имя Фамилия</h3>
+            <p class="person__spec">Техника, взрослые группы, сборы · стаж 15+ лет</p>
+          </div>
+        </article>
+        <article class="person reveal" data-d="3">
+          <div class="person__ph" data-ph="Фото тренера"><img src="assets/img/coach-4.jpg" alt=""></div>
+          <div class="person__body">
+            <p class="person__rank">КМС, реабилитолог</p>
+            <h3 class="person__name">Имя Фамилия</h3>
+            <p class="person__spec">Беременные, восстановление, дети с ОВЗ · стаж 7 лет</p>
+          </div>
+        </article>
+      </div>
+      <p class="mt-m"><a class="link-arrow" href="coaches.html">Вся команда <span>→</span></a></p>
+    </div>
+  </section>
+
+  <!-- БАССЕЙНЫ -->
+  <section class="section section--deep on-dark">
+    <div class="wrap">
+      <div class="head head--split reveal">
+        <div>
+          <p class="eyebrow">География</p>
+          <h2>Где мы тренируем</h2>
+        </div>
+        <p class="lead">Четыре площадки. Группу можно перенести, если сменился график.</p>
+      </div>
+      <div class="grid grid--4">
+        <div class="card reveal" style="background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.14); color:#fff">
+          <span class="card__num" style="color:var(--ice)">01</span>
+          <h3>Москва · Алтайская</h3>
+          <p style="color:rgba(255,255,255,.7)">25 м, 4 дорожки. Дети и взрослые.</p>
+        </div>
+        <div class="card reveal" data-d="1" style="background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.14); color:#fff">
+          <span class="card__num" style="color:var(--ice)">02</span>
+          <h3>Москва · ВДНХ</h3>
+          <p style="color:rgba(255,255,255,.7)">25 м, 6 дорожек. Спортивные группы.</p>
+        </div>
+        <div class="card reveal" data-d="2" style="background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.14); color:#fff">
+          <span class="card__num" style="color:var(--ice)">03</span>
+          <h3>Мытищи · Пироговский</h3>
+          <p style="color:rgba(255,255,255,.7)">25 м. Детские группы, обучение с нуля.</p>
+        </div>
+        <div class="card reveal" data-d="3" style="background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.14); color:#fff">
+          <span class="card__num" style="color:var(--ice)">04</span>
+          <h3>Пялово · д. Пруссы</h3>
+          <p style="color:rgba(255,255,255,.7)">Камерная площадка, индивидуальные занятия.</p>
+        </div>
+      </div>
+      <p class="mt-m"><a class="link-arrow" href="pools.html">Адреса, фото и как добраться <span>→</span></a></p>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head head--split reveal">
+        <div>
+          <p class="eyebrow">Отзывы</p>
+          <h2>Что говорят родители и ученики</h2>
+        </div>
+        <p class="lead">Больше — на странице отзывов и на картах.</p>
+      </div>
+      <div class="slider reveal">
+        <div class="slider__track">
+          <article class="rev">
+            <div class="rev__stars" aria-label="5 из 5">★★★★★</div>
+            <p class="rev__text">Сын пришёл в 6 лет, боялся опускать лицо в воду. Через полгода
+               проплыл 50 метров кролем на первых стартах. Тренер объясняет спокойно и
+               не давит.</p>
+            <div class="rev__who">
+              <div class="rev__ava">А</div>
+              <div><div class="rev__name">Анна</div><div class="rev__role">мама ученика, Мытищи</div></div>
+            </div>
+          </article>
+          <article class="rev">
+            <div class="rev__stars" aria-label="5 из 5">★★★★★</div>
+            <p class="rev__text">Пришёл в 38 лет с нуля, до этого только барахтался. За два месяца
+               научился держать дыхание и проплывать по 400 метров без остановки.</p>
+            <div class="rev__who">
+              <div class="rev__ava">Д</div>
+              <div><div class="rev__name">Дмитрий</div><div class="rev__role">взрослая группа, ВДНХ</div></div>
+            </div>
+          </article>
+          <article class="rev">
+            <div class="rev__stars" aria-label="5 из 5">★★★★★</div>
+            <p class="rev__text">Ездили на зимние сборы всей семьёй. Организация чёткая: две тренировки,
+               ОФП, восстановление. Дочь вернулась с личником на сотне.</p>
+            <div class="rev__who">
+              <div class="rev__ava">Е</div>
+              <div><div class="rev__name">Екатерина</div><div class="rev__role">сборы, январь</div></div>
+            </div>
+          </article>
+        </div>
+        <div class="slider__nav">
+          <button class="slider__btn" data-slide="prev" aria-label="Предыдущий отзыв">←</button>
+          <button class="slider__btn" data-slide="next" aria-label="Следующий отзыв">→</button>
+        </div>
+      </div>
+      <p class="mt-m"><a class="link-arrow" href="reviews.html">Все отзывы <span>→</span></a></p>
+    </div>
+  </section>
+
+  <!-- ФОРМА -->
+  <section class="section section--navy on-dark anchor" id="zayavka">
+    <div class="wrap">
+      <div class="grid grid--2" style="gap:clamp(32px,5vw,72px); align-items:start">
+        <div class="reveal">
+          <p class="eyebrow">Первый шаг</p>
+          <h2>Запишитесь на пробное занятие</h2>
+          <p class="lead mt-s">Подберём бассейн, тренера и время. Абонемент покупать не обязательно.</p>
+          <ul class="checks mt-m" style="--x:0">
+            <li style="color:rgba(255,255,255,.75)">Ответим в течение рабочего дня</li>
+            <li style="color:rgba(255,255,255,.75)">Подберём ближайший к вам бассейн</li>
+            <li style="color:rgba(255,255,255,.75)">Расскажем про цены без «звоните — узнаете»</li>
+          </ul>
+        </div>
+        <form class="form reveal" data-d="1" data-w3f>
+          <input type="hidden" name="form_name" value="Главная — пробное занятие">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+          <div class="form__row">
+            <div class="field">
+              <label for="h-name">Имя</label>
+              <input id="h-name" name="name" type="text" required placeholder="Как к вам обращаться">
+            </div>
+            <div class="field">
+              <label for="h-phone">Телефон</label>
+              <input id="h-phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="h-prog">Направление</label>
+              <select id="h-prog" name="program">
+                <option>Дети — обучение с нуля</option>
+                <option>Взрослые — обучение с нуля</option>
+                <option>Совершенствование техники</option>
+                <option>Спортивная подготовка</option>
+                <option>Беременные / после родов</option>
+                <option>Дети с ОВЗ</option>
+                <option>Триатлон</option>
+                <option>Выездные сборы</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="h-pool">Бассейн</label>
+              <select id="h-pool" name="pool">
+                <option>Не важно — подберите сами</option>
+                <option>Москва, Алтайская</option>
+                <option>Москва, ВДНХ (3-я Мытищинская)</option>
+                <option>Мытищи, Пироговский</option>
+                <option>Пялово, д. Пруссы</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="h-msg">Комментарий</label>
+            <textarea id="h-msg" name="message" placeholder="Возраст, опыт, удобное время"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" required>
+            <span>Согласен на обработку персональных данных в соответствии с
+              <a href="privacy.html">политикой конфиденциальности</a>.</span>
+          </label>
+          <button class="btn btn--wide" type="submit">Отправить заявку</button>
+          <div class="form__msg" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap cta__in">
+    <div>
+      <h2>Не уверены, какая программа ваша?</h2>
+      <p>Позвоните — разберём задачу за пять минут и предложим формат без навязывания абонемента.</p>
+    </div>
+    <a class="btn" href="tel:+70000000000">+7 (000) 000-00-00</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <img class="flogo" src="assets/img/logo.png" alt="MOSSWIM">
+        <p>Школа плавания для детей и взрослых. Обучение с нуля, техника, спортивная
+           подготовка и выездные сборы.</p>
+        <div class="footer__soc">
+          <a href="https://t.me/mosswim" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+          <a href="https://vk.com/mosswim" target="_blank" rel="noopener" aria-label="VK">VK</a>
+          <a href="https://wa.me/70000000000" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="about.html">О школе</a></li>
+          <li><a href="coaches.html">Тренеры</a></li>
+          <li><a href="pools.html">Бассейны</a></li>
+          <li><a href="camps.html">Сборы</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Программы</h4>
+        <ul>
+          <li><a href="programs.html#deti">Детям с 4 лет</a></li>
+          <li><a href="programs.html#vzroslye">Взрослым с нуля</a></li>
+          <li><a href="programs.html#sport">Спортивная подготовка</a></li>
+          <li><a href="programs.html#beremennye">Беременным</a></li>
+          <li><a href="programs.html#triatlon">Триатлон</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a class="footer__tel" href="tel:+70000000000">+7 (000) 000-00-00</a>
+        <ul>
+          <li><a href="mailto:info@mosswim.ru">info@mosswim.ru</a></li>
+          <li>Ежедневно 09:00 — 21:00</li>
+          <li><a href="schedule.html">Расписание и запись</a></li>
+          <li><a href="prices.html">Цены и абонементы</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© <span data-year>2026</span> Школа плавания MOSSWIM</span>
+      <a href="privacy.html">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Модалка записи -->
+<div class="modal" id="booking" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__box">
+    <button class="modal__close" data-close aria-label="Закрыть">×</button>
+    <h3 id="booking-title">Запись на занятие</h3>
+    <p class="modal__sub" id="booking-sub">Оставьте контакты — администратор свяжется с вами и подтвердит время.</p>
+    <form class="form" data-w3f>
+      <input type="hidden" name="form_name" value="Модальная форма записи">
+      <input type="hidden" name="slot" id="f-slot" value="">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <div class="field">
+        <label for="m-name">Имя</label>
+        <input id="m-name" name="name" type="text" required placeholder="Как к вам обращаться">
+      </div>
+      <div class="field">
+        <label for="m-phone">Телефон</label>
+        <input id="m-phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__">
+      </div>
+      <div class="field">
+        <label for="m-msg">Комментарий</label>
+        <textarea id="m-msg" name="message" placeholder="Возраст, опыт, пожелания по времени"></textarea>
+      </div>
+      <label class="consent">
+        <input type="checkbox" required>
+        <span>Согласен на обработку персональных данных в соответствии с
+          <a href="privacy.html">политикой конфиденциальности</a>.</span>
+      </label>
+      <button class="btn btn--wide" type="submit">Отправить заявку</button>
+      <div class="form__msg" role="status"></div>
+    </form>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SportsActivityLocation",
+  "name":"MOSSWIM — школа плавания",
+  "url":"https://mosswim.ru/",
+  "logo":"https://mosswim.ru/assets/img/icon-512.png",
+  "image":"https://mosswim.ru/assets/img/og-cover.jpg",
+  "description":"Школа плавания для детей и взрослых: обучение с нуля, техника, спортивная подготовка, выездные сборы.",
+  "telephone":"+7-000-000-00-00",
+  "email":"info@mosswim.ru",
+  "areaServed":["Москва","Мытищи"],
+  "sameAs":["https://t.me/mosswim","https://vk.com/mosswim"],
+  "openingHours":"Mo-Su 09:00-21:00"
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
