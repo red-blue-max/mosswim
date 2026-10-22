@@ -275,7 +275,10 @@ const MOSSWIM = {
      сработать раньше, чем до них дошёл этот скрипт. */
   $$('.person__ph img, .pool__ph img, .prog__media img').forEach(img => {
     const drop = () => img.remove();
-    const mark = () => img.parentElement.classList.add('has-photo');
+    // Фото может быть обёрнуто в <picture>, поэтому ищем именно рамку,
+    // а не прямого родителя — иначе класс уйдёт не туда
+    const frame = img.closest('.person__ph, .pool__ph, .prog__media');
+    const mark = () => { if (frame) frame.classList.add('has-photo'); };
     if (img.complete) { if (img.naturalWidth === 0) drop(); else mark(); }
     img.addEventListener('error', drop);
     img.addEventListener('load', mark);
