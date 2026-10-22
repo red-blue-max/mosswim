@@ -186,6 +186,36 @@ p:last-child{ margin-bottom:0; }
   transition:box-shadow .3s var(--ease);
 }
 .header.is-stuck{ box-shadow:0 14px 34px -22px rgba(0,0,0,.9); }
+
+/* ---------- Шапка поверх видео в главном экране ----------
+   Герой подтягивается вверх отрицательным отступом, чтобы видео уходило
+   под шапку, и компенсирует это собственным padding — содержимое
+   остаётся на месте. Пока экран не прокручен, фон шапки прозрачный;
+   как только герой уходит вверх, синий возвращается. */
+body.has-hero .topbar{
+  position:relative; z-index:81;
+  background:transparent;
+}
+body.has-hero .hero{
+  margin-top:calc(-1 * (var(--header-h) + 38px));
+  padding-top:calc(var(--header-h) + 38px);
+}
+body.has-hero .header{
+  transition:background-color .4s var(--ease), border-color .4s var(--ease),
+             box-shadow .3s var(--ease);
+}
+body.is-over-hero .header{
+  background:transparent;
+  border-bottom-color:transparent;
+  box-shadow:none;
+}
+@media (max-width:760px){
+  /* Верхняя плашка на телефоне скрыта — компенсируем только высоту шапки */
+  body.has-hero .hero{
+    margin-top:calc(-1 * var(--header-h));
+    padding-top:var(--header-h);
+  }
+}
 .header__in{ display:flex; align-items:center; gap:28px; height:var(--header-h); }
 
 .brand{ display:flex; align-items:center; flex:0 0 auto; }
@@ -290,16 +320,35 @@ p:last-child{ margin-bottom:0; }
    Маска висит на контейнере, поэтому одинаково работает и для видео,
    и для фото-подложки под ним. */
 .hero__photo{
+  /* Горизонтальное растворение. Раньше тут была радиальная маска, и она
+     упиралась в левый край элемента, не дойдя до нуля: оставалось ~17%
+     непрозрачности, и граница кадра читалась как вертикальная линия.
+     Линейный градиент гарантированно приходит в ноль ровно на краю,
+     а много промежуточных стопов убирают ступеньки. */
+  --fade:linear-gradient(to left,
+     rgba(0,0,0,1)    0%,
+     rgba(0,0,0,1)   24%,
+     rgba(0,0,0,.98) 32%,
+     rgba(0,0,0,.94) 39%,
+     rgba(0,0,0,.87) 46%,
+     rgba(0,0,0,.77) 53%,
+     rgba(0,0,0,.65) 60%,
+     rgba(0,0,0,.51) 67%,
+     rgba(0,0,0,.37) 74%,
+     rgba(0,0,0,.24) 81%,
+     rgba(0,0,0,.14) 87%,
+     rgba(0,0,0,.07) 92%,
+     rgba(0,0,0,.025) 96%,
+     rgba(0,0,0,.005) 98.5%,
+     rgba(0,0,0,0) 100%);
   position:absolute; z-index:-2;
   top:0; right:0; bottom:0;
-  width:min(66%, 1120px);
+  width:min(74%, 1480px);
   pointer-events:none;
   opacity:.95;
   filter:saturate(.94);
-  -webkit-mask-image:radial-gradient(118% 104% at 86% 40%,
-     #000 16%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.34) 64%, transparent 82%);
-  mask-image:radial-gradient(118% 104% at 86% 40%,
-     #000 16%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.34) 64%, transparent 82%);
+  -webkit-mask-image:var(--fade);
+  mask-image:var(--fade);
 }
 .hero__photo picture, .hero__photo img, .hero__video{
   position:absolute; inset:0;
@@ -314,11 +363,17 @@ p:last-child{ margin-bottom:0; }
    плюс затемнение к низу под строкой с цифрами. */
 .hero__veil{
   position:absolute; inset:0; z-index:-1;
+  /* Горизонтальный слой раньше обрывался на 76% — резкая смена наклона
+     градиента тоже читается глазом как линия. Теперь хвост доходит до края. */
   background:
-    linear-gradient(100deg, rgba(7,26,60,.94) 0%, rgba(7,26,60,.78) 26%,
-                            rgba(7,26,60,.22) 56%, rgba(7,26,60,0) 76%),
-    linear-gradient(180deg, rgba(7,26,60,.42) 0%, rgba(7,26,60,0) 32%,
-                            rgba(7,26,60,.45) 74%, rgba(7,26,60,.9) 100%);
+    linear-gradient(100deg, rgba(7,26,60,.95) 0%,  rgba(7,26,60,.88) 18%,
+                            rgba(7,26,60,.72) 32%, rgba(7,26,60,.52) 45%,
+                            rgba(7,26,60,.34) 57%, rgba(7,26,60,.20) 68%,
+                            rgba(7,26,60,.10) 78%, rgba(7,26,60,.04) 88%,
+                            rgba(7,26,60,0)  100%),
+    linear-gradient(180deg, rgba(7,26,60,.52) 0%,  rgba(7,26,60,.16) 22%,
+                            rgba(7,26,60,0)   38%, rgba(7,26,60,.45) 74%,
+                            rgba(7,26,60,.9) 100%);
 }
 
 @media (max-width:860px){
@@ -326,11 +381,11 @@ p:last-child{ margin-bottom:0; }
      Остаётся фото, приглушённое до уровня фактуры. */
   .hero__video{ display:none; }
   .hero__photo{
+    --fade:linear-gradient(to left,
+       rgba(0,0,0,1) 0%, rgba(0,0,0,.88) 26%, rgba(0,0,0,.62) 48%,
+       rgba(0,0,0,.36) 68%, rgba(0,0,0,.16) 84%, rgba(0,0,0,.04) 94%,
+       rgba(0,0,0,0) 100%);
     width:100%; opacity:.38;
-    -webkit-mask-image:radial-gradient(125% 72% at 70% 20%,
-       #000 8%, rgba(0,0,0,.6) 38%, transparent 74%);
-    mask-image:radial-gradient(125% 72% at 70% 20%,
-       #000 8%, rgba(0,0,0,.6) 38%, transparent 74%);
   }
   .hero__photo img{ object-position:60% 38%; }
   .hero__veil{

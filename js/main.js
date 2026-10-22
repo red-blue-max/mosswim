@@ -45,9 +45,20 @@ const MOSSWIM = {
   /* ---------- Тень у прилипшей шапки ---------- */
   const header = $('.header');
   if (header) {
-    const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 12);
+    const hero = $('.hero');
+    if (hero) document.body.classList.add('has-hero');
+
+    const onScroll = () => {
+      header.classList.toggle('is-stuck', window.scrollY > 12);
+      if (hero) {
+        // Прозрачной шапка остаётся, пока под ней ещё есть главный экран
+        const solidFrom = hero.offsetHeight - header.offsetHeight;
+        document.body.classList.toggle('is-over-hero', window.scrollY < solidFrom);
+      }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
   }
 
   /* ---------- Появление блоков при скролле ---------- */
