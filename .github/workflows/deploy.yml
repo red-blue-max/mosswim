@@ -1,0 +1,78 @@
+name: Выгрузка сайта на Timeweb
+
+# Запускается при каждом push в main. Правки только в документации
+# (README, CONTENT) сайт не меняют — такие запуски пропускаем.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.gitattributes'
+  workflow_dispatch:
+    inputs:
+      clean:
+        description: 'Полностью очистить папку на сервере перед выгрузкой'
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-timeweb
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Собрать и выгрузить
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Забрать код
+        uses: actions/checkout@v6
+
+      - name: Собрать папку для выгрузки
+        run: |
+          set -e
+          mkdir -p dist/css dist/js dist/assets/img dist/assets/video
+
+          # Только то, что нужно серверу. README, CONTENT.md, исходники
+          # фотографий и служебные файлы git на хостинг не едут.
+          cp *.html dist/
+          cp .htaccess robots.txt sitemap.xml dist/
+          cp css/*.css dist/css/
+          cp js/*.js  dist/js/
+          cp assets/img/*.* dist/assets/img/
+          cp assets/video/*.mp4 dist/assets/video/ 2>/dev/null || true
+
+          # Пустые каталоги FTP-клиент создавать не станет — убираем
+          rmdir dist/assets/video 2>/dev/null || true
+
+          echo "Файлов к выгрузке: $(find dist -type f | wc -l)"
+          echo "Размер: $(du -sh dist | cut -f1)"
+          find dist -type f | sort
+
+      - name: Проверить, заданы ли доступы
+        id: check
+        env:
+          SERVER: ${{ secrets.FTP_SERVER }}
+        run: |
+          if [ -z "$SERVER" ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Доступы к хостингу ещё не заданы в Settings → Secrets. Выгрузка пропущена, сборка прошла успешно."
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Выгрузить по FTP
+        if: steps.check.outputs.ready == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          local-dir: ./dist/
+          # При обычном запуске выгружаются только изменившиеся файлы,
+          # а удалённые из репозитория — удаляются и на сервере.
+          # Полная очистка включается вручную через workflow_dispatch.
+          dangerous-clean-slate: ${{ github.event_name == 'workflow_dispatch' && inputs.clean }}
+          log-level: minimal
