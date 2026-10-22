@@ -1,0 +1,48 @@
+# ============================================================
+#  MOSSWIM — настройки Apache для хостинга Timeweb
+#  Файл кладётся в корень сайта, рядом с index.html
+# ============================================================
+
+# ----- Кодировка и стартовая страница -----
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
+
+# ----- Своя страница 404 вместо серверной заглушки -----
+ErrorDocument 404 /404.html
+
+# ----- Сжатие текстовых файлов: вёрстка едет втрое легче -----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json image/svg+xml
+</IfModule>
+
+# ----- Кеширование: при повторном заходе картинки не качаются заново -----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 30 days"
+  ExpiresByType application/javascript  "access plus 30 days"
+  ExpiresByType image/jpeg              "access plus 180 days"
+  ExpiresByType image/png               "access plus 180 days"
+  ExpiresByType image/webp              "access plus 180 days"
+  ExpiresByType image/svg+xml           "access plus 180 days"
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+# ----- Типы файлов на случай старой конфигурации сервера -----
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+</IfModule>
+
+# ============================================================
+#  ВКЛЮЧИТЬ ПОСЛЕ ВЫПУСКА SSL-СЕРТИФИКАТА
+#  Убрать решётки у четырёх строк ниже — сайт станет
+#  открываться только по https. Раньше времени не включать:
+#  без сертификата получится бесконечная переадресация.
+# ============================================================
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>

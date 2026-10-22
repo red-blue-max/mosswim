@@ -237,9 +237,16 @@ const MOSSWIM = {
   /* ---------- Год в подвале ---------- */
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
-  /* ---------- Показ фото, если файл реально есть ---------- */
+  /* ---------- Показ фото, если файл реально есть ----------
+     Пока снимков нет, на их месте остаётся синяя заглушка, а сломанный
+     <img> убираем — иначе браузер рисует поверх неё иконку «битая
+     картинка». Уже загруженные проверяем отдельно: событие error могло
+     сработать раньше, чем до них дошёл этот скрипт. */
   $$('.person__ph img, .pool__ph img, .prog__media img').forEach(img => {
-    img.addEventListener('error', () => { img.remove(); });
-    img.addEventListener('load', () => { img.parentElement.classList.add('has-photo'); });
+    const drop = () => img.remove();
+    const mark = () => img.parentElement.classList.add('has-photo');
+    if (img.complete) { if (img.naturalWidth === 0) drop(); else mark(); }
+    img.addEventListener('error', drop);
+    img.addEventListener('load', mark);
   });
 })();

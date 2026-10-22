@@ -72,11 +72,14 @@
   <!-- ГЕРОЙ -->
   <section class="hero">
     <div class="hero__media">
-      <!-- Положите ролик в assets/video/hero.mp4 и постер в assets/img/hero.jpg.
-           Пока файлов нет — работает градиентный фон. -->
+      <!-- Фоновое видео отключено: его роль играет фото пловца ниже.
+           Чтобы включить — положите ролик в assets/video/hero.mp4,
+           постер в assets/img/hero.jpg и раскомментируйте блок.
+           Фото при этом лучше приглушить, иначе два слоя будут спорить.
       <video autoplay muted loop playsinline poster="assets/img/hero.jpg">
         <source src="assets/video/hero.mp4" type="video/mp4">
       </video>
+      -->
     </div>
     <!-- Фото пловца в правой части экрана. Края растворяются маской в css/style.css -->
     <div class="hero__photo" aria-hidden="true">
