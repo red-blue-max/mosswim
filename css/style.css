@@ -285,18 +285,15 @@ p:last-child{ margin-bottom:0; }
     rgba(169,216,245,.05) 0 2px, transparent 2px 9px);
   mix-blend-mode:screen; opacity:.5;
 }
-/* Фотография пловца справа. Никакой рамки кадра: края растворяются
-   радиальной маской, а вуаль сверху гасит фото со стороны текста. */
+/* Видео пловцов справа. Никакой рамки кадра: края растворяются
+   радиальной маской, а вуаль сверху гасит картинку со стороны текста.
+   Маска висит на контейнере, поэтому одинаково работает и для видео,
+   и для фото-подложки под ним. */
 .hero__photo{
   position:absolute; z-index:-2;
   top:0; right:0; bottom:0;
   width:min(66%, 1120px);
   pointer-events:none;
-}
-.hero__photo picture{ display:block; width:100%; height:100%; }
-.hero__photo img{
-  width:100%; height:100%;
-  object-fit:cover; object-position:58% 42%;
   opacity:.95;
   filter:saturate(.94);
   -webkit-mask-image:radial-gradient(118% 104% at 86% 40%,
@@ -304,6 +301,14 @@ p:last-child{ margin-bottom:0; }
   mask-image:radial-gradient(118% 104% at 86% 40%,
      #000 16%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.34) 64%, transparent 82%);
 }
+.hero__photo picture, .hero__photo img, .hero__video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:58% 42%;
+}
+/* Фото лежит слоем ниже: оно видно, пока видео грузится,
+   и остаётся, если видео почему-то не запустилось. */
+.hero__video{ z-index:1; }
 
 /* Вуаль: тёмная слева под текстом, прозрачная справа над фото,
    плюс затемнение к низу под строкой с цифрами. */
@@ -317,14 +322,17 @@ p:last-child{ margin-bottom:0; }
 }
 
 @media (max-width:860px){
-  .hero__photo{ width:100%; }
-  .hero__photo img{
-    opacity:.38; object-position:60% 38%;
+  /* На телефоне видео не играет: лишние мегабайты мобильного трафика.
+     Остаётся фото, приглушённое до уровня фактуры. */
+  .hero__video{ display:none; }
+  .hero__photo{
+    width:100%; opacity:.38;
     -webkit-mask-image:radial-gradient(125% 72% at 70% 20%,
        #000 8%, rgba(0,0,0,.6) 38%, transparent 74%);
     mask-image:radial-gradient(125% 72% at 70% 20%,
        #000 8%, rgba(0,0,0,.6) 38%, transparent 74%);
   }
+  .hero__photo img{ object-position:60% 38%; }
   .hero__veil{
     background:linear-gradient(180deg, rgba(7,26,60,.62) 0%, rgba(7,26,60,.52) 26%,
                                        rgba(7,26,60,.82) 62%, rgba(7,26,60,.97) 100%);

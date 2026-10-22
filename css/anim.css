@@ -150,4 +150,7 @@
   .pagehead::after, .lane, .section::before, .tag--live::before{
     animation:none !important;
   }
+  /* Движущееся видео — ровно то, от чего человек отказался в настройках.
+     Вместо него остаётся фото-подложка. */
+  .hero__video{ display:none !important; }
 }

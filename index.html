@@ -81,7 +81,9 @@
       </video>
       -->
     </div>
-    <!-- Фото пловца в правой части экрана. Края растворяются маской в css/style.css -->
+    <!-- Видео пловцов в правой части экрана. Края растворяются маской
+         в css/style.css. Фото лежит слоем ниже: оно видно, пока видео
+         грузится, заменяет его на телефонах и при настройке «меньше движения». -->
     <div class="hero__photo" aria-hidden="true">
       <picture>
         <source media="(max-width:860px)" type="image/webp" srcset="assets/img/hero-swimmer-sm.webp">
@@ -90,6 +92,11 @@
         <img src="assets/img/hero-swimmer.jpg" alt="" width="1600" height="1067"
              fetchpriority="high" decoding="async">
       </picture>
+      <!-- Адрес ролика лежит в data-src: файл подключается скриптом и только
+           на широких экранах. Иначе телефон скачал бы три мегабайта ради
+           слоя, который на нём всё равно скрыт. -->
+      <video class="hero__video" muted loop playsinline preload="none"
+             data-src="assets/video/hero.mp4"></video>
     </div>
     <div class="hero__veil"></div>
     <div class="wrap hero__in">

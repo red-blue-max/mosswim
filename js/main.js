@@ -234,6 +234,26 @@ const MOSSWIM = {
     window.addEventListener('resize', update);
   }
 
+  /* ---------- Видео в главном экране ----------
+     Подключаем ролик только там, где он действительно виден: на широких
+     экранах и если человек не просил систему убавить анимацию. На телефоне
+     вместо него работает фото, а трафик остаётся целым. */
+  const heroVideo = document.querySelector('.hero__video');
+  if (heroVideo && heroVideo.dataset.src) {
+    const wide = window.matchMedia('(min-width: 861px)').matches;
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (wide && !calm) {
+      const source = document.createElement('source');
+      source.src = heroVideo.dataset.src;
+      source.type = 'video/mp4';
+      heroVideo.appendChild(source);
+      heroVideo.load();
+      // play() возвращает промис и может быть отклонён политикой автовоспроизведения
+      const started = heroVideo.play();
+      if (started) started.catch(() => {});
+    }
+  }
+
   /* ---------- Год в подвале ---------- */
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
