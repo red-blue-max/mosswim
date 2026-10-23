@@ -62,6 +62,26 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
+      # Подсказка на случай, если FTP_DIR задан неверно: показывает,
+      # куда пользователь попадает при входе и что лежит в целевой папке.
+      # Никогда не роняет сборку — это справка, а не проверка.
+      - name: Показать структуру на сервере
+        if: steps.check.outputs.ready == 'true'
+        continue-on-error: true
+        env:
+          S: ${{ secrets.FTP_SERVER }}
+          U: ${{ secrets.FTP_USERNAME }}
+          P: ${{ secrets.FTP_PASSWORD }}
+          D: ${{ secrets.FTP_DIR }}
+        run: |
+          echo "— Каталог, куда попадает FTP-пользователь при входе:"
+          curl -s --max-time 25 --list-only "ftp://$S/" --user "$U:$P" | head -40 \
+            || echo "  не удалось прочитать — проверьте FTP_SERVER, логин и пароль"
+          echo
+          echo "— Содержимое FTP_DIR ($D):"
+          curl -s --max-time 25 --list-only "ftp://$S$D" --user "$U:$P" | head -40 \
+            || echo "  каталог не найден — значит FTP_DIR указан неверно"
+
       - name: Выгрузить по FTP
         if: steps.check.outputs.ready == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
